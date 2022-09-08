@@ -9,13 +9,18 @@ ActiveAdmin.register Player do
 
   form do |f|
     f.inputs do
-      f.input :team_id
+      f.input :team_id, as: :select, collection: Team.all, :input_html => { :class => 'chzn-select', :width => 'auto', "data-placeholder" => 'Click'}
+  
       f.input :player_name
       f.input :player_age
       f.input :player_gender
       f.input :player_type
       f.input :image1, as: :file
     end
+     panel 'Markup' do
+      "The following can be used in the content below..."
+    end
+    
     f.actions
   end
 
