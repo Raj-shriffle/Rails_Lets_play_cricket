@@ -42,8 +42,5 @@ ActiveAdmin.register Match do
       redirect_to (admin_matches_path),notice: "match created successfully!"
     end 
 
-    def edit
-    end
-
   end
 end

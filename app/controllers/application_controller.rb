@@ -15,17 +15,26 @@ class ApplicationController < ActionController::Base
 	  if admin_user_signed_in?
 	    admin_dashboard_path
 	  else
-      userss_path(resource)
+       # userss_path(resource)
+      # userss_path(@user)
+      matchess_index_path(resource)
+      # contestes_path(resource)
 	  end
   end
 
   def after_sign_out_path_for(resource)
-    if admin_user_signed_in?
+    # if admin_user_signed_in?
+    #   new_admin_user_session_path
+    # else
+    #   user_session_path
+    # end
+
+     if resource == :admin_user
       new_admin_user_session_path
     else
       user_session_path
     end
-    byebug
+
   end
 
 	def configure_permitted_parameters

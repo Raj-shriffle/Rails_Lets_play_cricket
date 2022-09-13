@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :userss
+  resources :contestes
+  resources :matchess
+  resources :user_contests
+
+  resources :contest do 
+    resources :user_contests
+  end
 
   root to:"userss#index"
-
   devise_for :users
 
   devise_scope :user do  
@@ -17,3 +23,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
+
+
+#contest/:id/user_contest/new

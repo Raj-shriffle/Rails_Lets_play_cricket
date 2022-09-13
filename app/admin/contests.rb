@@ -23,4 +23,5 @@ ActiveAdmin.register Contest do
   #   permitted
   # end
   
+  
 end
