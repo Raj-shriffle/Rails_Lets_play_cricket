@@ -62,10 +62,8 @@
 
     .list1  
     {
-    	background-image: linear-gradient(black, red);
-    	color :white
-    	
-
+    	background-image: linear-gradient(skyblue,blue);
+    	text-color :white
     }
     .list1:hover 
     {
@@ -87,7 +85,10 @@
       .row.content {height:auto;} 
     }
 
-
+    span 
+    {
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -121,8 +122,8 @@
    	<ul style="list-style: none; margin-left: 100px;">  
       <li class="list1">
        <%= link_to contestis_path(f.id) do %>
-         <%= f.teams.first.teamname %><span>VS</span><br/>
-         <%= f.teams.second.teamname %>
+         <span><%= f.teams.first.teamname %><span>VS</span><br/>
+         <%= f.teams.second.teamname %></span>
       <% end %>
       </li>
    	</ul>

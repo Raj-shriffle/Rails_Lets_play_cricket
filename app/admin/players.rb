@@ -5,7 +5,7 @@ ActiveAdmin.register Player do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :player_name, :player_age, :player_gender, :player_type, :team_id, :image1, :playerpoint
+  permit_params :player_name, :player_age, :player_gender, :player_type, :team_id, :image1, :playerpoint, :user_id
 
   form do |f|
     f.inputs do
@@ -16,6 +16,7 @@ ActiveAdmin.register Player do
       f.input :player_gender
       f.input :player_type
       f.input :playerpoint
+      f.input :user_id
       f.input :image1, as: :file
 
     end
@@ -33,6 +34,7 @@ ActiveAdmin.register Player do
       row :player_gender
       row :playerpoint
       row :player_type
+      row :user_id
       row :image do |ad|
         image_tag url_for(ad.image1), style: "max-width: 50%"
       end

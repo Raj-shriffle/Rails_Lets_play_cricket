@@ -192,7 +192,7 @@ $(document).ready(function(){
                 	<% @user_data.each do |f| %>
                      <tr>
                         <th>Team Name</th>						
-                        <th>Player Name</th>
+                        <th>Players Name</th>
                      </tr>
                 </thead>
                 <tbody>
@@ -202,7 +202,6 @@ $(document).ready(function(){
                         	<li>
                               <% f.players.each do |pl| %>
 			                   <td><%= pl.player_name %>
-			    	           <%= image_tag  pl.image1, class: "user-image",:size => "20x30" %>
 			    	           </td>
 			    	        </li>
 			    	      </ul>
@@ -216,7 +215,7 @@ $(document).ready(function(){
         </div>
     </div>
 </div>  
-
- <%= link_to "Create Your Team",new_contest_user_contest_path(@user_contest.id),:class=>"btn btn-success" %> 
+<%= link_to "Create Your Team",new_contest_user_team_path(@user_contest.id),:class=>"btn btn-success" %> 
+<p align="right"><%= link_to "Back To Contest", contestis_path(@user_contest.match.id),:class=>'btn btn-success' %></p>
 </body>
 </html>

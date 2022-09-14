@@ -103,3 +103,5 @@
 ---------------------------------------
 git push code token:- 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
 --------------------------------------------------------------
+a= current_user.user_teams.create(contest_id: params[contest_id])
+a.players << players

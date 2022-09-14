@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create team</title>
+	<style>
+		ul 
+		{
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+  <h1>Your Team is Created</h1>
+    <% if current_user.user_teams.first == nil %>
+ 			<% current_user.user_teams.first.players.each do |player| %>
+  			<ul>
+  				<li>
+  		 			<%= player.player_name %>
+  				</li>
+  			</ul>
+  			<% end %>
+  <% end %>
+</body>
+</html>

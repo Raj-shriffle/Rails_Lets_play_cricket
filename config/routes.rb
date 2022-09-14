@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   resources :contestes
   resources :matchess
   resources :user_contests
+  resources :user_teams
+
+  # resources :contest do 
+  #   resources :user_contests
+  # end
 
   resources :contest do 
-    resources :user_contests
+    resources :user_teams
   end
 
   root to:"userss#index"
