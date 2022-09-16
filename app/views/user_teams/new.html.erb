@@ -31,6 +31,7 @@
            <%= fields_for "player_ids[]", player do |pf| %>
             <table class="table table-striped table-hover table-border">
               <tr>
+              <td></td>
               <td><%= player.player_name %>                </td>
               <td><%= pf.check_box "player_name" %></td>
               <td><div><%= player.player_type %>   <div></td>
@@ -43,6 +44,7 @@
             <%= form.submit "Create Team",:class=>"btn btn-success" %></td>
           <% else %>
             <p>you alredy created team </p>
+            <%= link_to "See Your team", user_teams_path %>
           <% end %>
           <%= link_to "Back TO Contest", user_team_path(@user_contest),:class=>"btn btn-danger" %> 
     <% end %>

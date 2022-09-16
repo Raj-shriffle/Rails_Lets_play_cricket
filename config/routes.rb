@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :user_contests
   resources :user_teams
 
+  # get 'user_teams/:id/see', to: 'user_teams#see', as: :see
+
   # resources :contest do 
   #   resources :user_contests
   # end
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
   resources :contest do 
     resources :user_teams
   end
+
+  # get '/user_teams/see/:id', to: 'user_teams#see', as:'user_teams_see'
+  # map.users '/user_teams', :controller => 'user_teams', :action => 'see'
 
   root to:"userss#index"
   devise_for :users

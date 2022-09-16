@@ -30,6 +30,10 @@ class UserTeamsController < ApplicationController
     	#redirect_to new_contest_user_team_path(:contest_id), notice: "Book not found"
     end
 
+  	def see
+    	@user_contest = Contest.find(id: params[:id])
+  	end
+
 		
 		# 	@player = Player.new(params_method)
 		# 	for i in player do 
