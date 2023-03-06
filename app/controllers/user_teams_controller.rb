@@ -16,7 +16,6 @@ class UserTeamsController < ApplicationController
 		blank_array = []
 		array.map{ |obj| blank_array << obj.first if obj.last.values[0] == "1"}
 		players = Player.find(blank_array)
-		byebug
 		if players.length == 11 
 	   	a= current_user.user_teams.create(contest_id: params[:contest_id])
       a.players << players
